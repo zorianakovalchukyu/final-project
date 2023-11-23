@@ -1,0 +1,181 @@
+[
+  {
+    "image": "icons/products/pizza/karne.webp",
+    "title": "Верона",
+    "ingredients": "Шинка,гриби печериці,сир пармезан,трюфельна олія, свіжа рукола, сир моцарела, вершковий соус.",
+    "price": "262",
+    "weight": "420",
+    "bonus": "8",
+    "category": "meat"
+  },
+
+  {
+    "image": "icons/products/pizza/proshuto.webp",
+    "title": "Прошуто",
+    "ingredients": "Хамон, шинка, артишоки, сир, моцарела, гриби печериці, неаполітанський соус.",
+    "price": "291",
+    "weight": "480",
+    "bonus": "9",
+    "category": "meat"
+  },
+  {
+    "image": "icons/products/pizza/kaprichoza.webp",
+    "title": "Капрічоза",
+    "ingredients": "Шинка, печериці, маслини, сир моцарела, неополітанський соус.",
+    "price": "252",
+    "weight": "460",
+    "bonus": "9",
+    "category": "meat",
+    "isNew": "true;"
+  },
+  {
+    "image": "icons/products/pizza/kon-birra.webp",
+    "title": "Кон Бірра",
+    "ingredients": "Сир моцарела, мисливські ковбаски, куряче філе,салямі чарізо, сир дорблю, перець чилі, вершковий соус, орегано.",
+    "price": "272",
+    "weight": "420",
+    "bonus": "8",
+    "category": "meat, spicy",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/tonno.webp",
+    "title": "Тонно",
+    "ingredients": "Тунець консервований, цибуля маринована,каперси, сир моцарела, неаполітанський соус.",
+    "price": "256",
+    "weight": "430",
+    "bonus": "8",
+    "category": "vegetables, seafood",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/kvatro-formadzhi.webp",
+    "title": "Кватро Формаджі",
+    "ingredients": "Сир моцарела, ніжний крем-сир, сир пармезан, сир Доб блю, вершковий соус.",
+    "price": "298",
+    "weight": "420",
+    "bonus": "9",
+    "category": "vegetables",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/karne.webp",
+    "title": "Карне",
+    "ingredients": "Шинка, салямі мілано, куряче філе, бекон, сир моцарела, неаполітанський соус, орегано.",
+    "price": "277",
+    "weight": "440",
+    "bonus": "8",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/karbonara.webp",
+    "title": "Карбонара",
+    "ingredients": "Бекон, жовток курячий, часник, свіжа рукола, сир моцарела, сир пармезан, вершковий соус.",
+    "price": "261",
+    "weight": "410",
+    "bonus": "8",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/mafio-di-czezarini.webp",
+    "title": "Мафіо ді Цезаріні",
+    "ingredients": "Куряче філе, бекон, мікс салатів, помідори чері, соус цезар, сир моцарела, сир пармезан, неаполітанський соус.*Мікс салату з соусом цезар подається в окремому боксі.Перед вживанням піци, необхідно просто його викласти рівномірним шаром на основу.",
+    "price": "311",
+    "weight": "530",
+    "bonus": "9",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/ispana.webp",
+    "title": "Іспана",
+    "ingredients": "Салямі чарізо, бекон, ковбаски,кукурудза, сир моцарела, неаполітанський соус.",
+    "price": "252",
+    "weight": "440",
+    "bonus": "9",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/salyami.webp",
+    "title": "Салямі",
+    "ingredients": "Салямі мілано, сир Моцарела, неаполітанський соус, орегано.",
+    "price": "246",
+    "weight": "420",
+    "bonus": "7",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/margaryta.webp",
+    "title": "Маргарита",
+    "ingredients": "Неаполітанський соус, сир моцарела.",
+    "price": "172",
+    "weight": "380",
+    "bonus": "5",
+    "category": "vegetables",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/mamaitaliano.webp",
+    "title": "Мамма Італіана",
+    "ingredients": "Сир моцарела, ніжний крем-сир, сир Дор блю, хамон, свіжа рукола, сир пармезан, вершковий соус.",
+    "price": "303",
+    "weight": "450",
+    "bonus": "9",
+    "category": "vegetables",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/gavajska.webp",
+    "title": "Гавайська",
+    "ingredients": "Печена курка, ананаси, кукурудза, неаполітанський соус, сир моцарела",
+    "price": "241",
+    "weight": "460",
+    "bonus": "7",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/diavola.webp",
+    "title": "Діавола",
+    "ingredients": "Салямі чарізо, салямі мілано, перець чилі свіжий і сухий, цибуля маринована, сир моцарела, пікантний соус, неаполвтанський соус.",
+    "price": "262",
+    "weight": "460",
+    "bonus": "8",
+    "category": "meat, spicy",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/bri.webp",
+    "title": "Брі",
+    "ingredients": "Багато сиру Брі, сир моцарела, вишневий соус, свіжа рукола, соус вершковий",
+    "price": "300",
+    "weight": "470",
+    "bonus": "9",
+    "category": "vegetables",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/kalczone.webp",
+    "title": "Кальцоне",
+    "ingredients": "Шинка, ніжний крем-сир, гриби, печериці, сир моцарела, неаполітанський соус.",
+    "price": "223",
+    "weight": "420",
+    "bonus": "7",
+    "category": "meat",
+    "isNew": "false"
+  },
+  {
+    "image": "icons/products/pizza/3-syry-z-grusheyu.webp",
+    "title": "3 сири з грушкою",
+    "ingredients": "Сир моцарела двох видів, сир Дор блю, груша, мед, грецький горіх, вершковий соус.",
+    "price": "274",
+    "weight": "440",
+    "bonus": "8",
+    "category": "vegetables",
+    "isNew": "false"
+  }
+]

@@ -1,0 +1,134 @@
+
+{
+    "categories":{
+      "Піца":[
+        {
+          "id":1,
+          "image": "icons/products/pizza/karne.webp",
+          "title": "Верона",
+          "ingredients": [
+            "Салямі мілано",
+            "сир Моцарела",
+            "неаполітанський соус",
+            "орегано"
+          ],
+          "price": 262,
+          "weight": 420,
+          "bonus": 8,
+          "category": "meat"
+        },
+        {
+            "id":2,
+            "image": "icons/products/pizza/karne.webp",
+            "title": "Верона",
+            "ingredients": [
+                "Салямі мілано",
+                "сир Моцарела",
+                "неаполітанський соус",
+                "орегано"
+              ],
+            "price": "262",
+            "weight": "420",
+            "bonus": "8",
+            "category": "meat"
+        }
+      ],
+      "Салати":[
+        {
+          "id":3,
+          "image": "icons/products/pizza/karne.webp",
+          "title": "Салат",
+          "ingredients":[
+            "Салямі мілано",
+            "сир Моцарела",
+            "неаполітанський соус",
+            "орегано"
+          ],
+          "price": 262,
+          "weight": 420,
+          "bonus": 8,
+          "category": "meat"
+        },
+        {
+            "id":4,
+            "image": "icons/products/pizza/karne.webp",
+            "title": "Верона",
+            "ingredients": [
+                "Салямі мілано",
+                "сир Моцарела",
+                "неаполітанський соус",
+                "орегано"
+              ],
+            "price": "262",
+            "weight": "420",
+            "bonus": "8",
+            "category": "meat"
+        }
+      ],
+      "Десерти":[
+        {
+          "id":5,
+          "image": "icons/products/pizza/karne.webp",
+          "title": "Верона",
+          "ingredients": [
+            "Салямі мілано",
+            "сир Моцарела",
+            "неаполітанський соус",
+            "орегано"
+          ],
+          "price": 262,
+          "weight": 420,
+          "bonus": 8,
+          "category": "meat"
+        },
+        {
+            "id":6,
+            "image": "icons/products/pizza/karne.webp",
+            "title": "Верона",
+            "ingredients": [
+                "Салямі мілано",
+                "сир Моцарела",
+                "неаполітанський соус",
+                "орегано"
+              ],
+            "price": "262",
+            "weight": "420",
+            "bonus": "8",
+            "category": "meat"
+        }
+      ],
+      "Напої":[
+        {
+          "id":7,
+          "image": "icons/products/pizza/karne.webp",
+          "title": "Верона",
+          "ingredients": [
+            "Салямі мілано",
+            "сир Моцарела",
+            "неаполітанський соус",
+            "орегано"
+          ],
+          "price": 262,
+          "weight": 420,
+          "bonus": 8,
+          "category": "meat"
+        },
+        {
+            "id":8,
+            "image": "icons/products/pizza/karne.webp",
+            "title": "Верона",
+            "ingredients": [
+                "Салямі мілано",
+                "сир Моцарела",
+                "неаполітанський соус",
+                "орегано"
+              ],
+            "price": "262",
+            "weight": "420",
+            "bonus": "8",
+            "category": "meat"
+        }
+      ]
+
+    }
+}
