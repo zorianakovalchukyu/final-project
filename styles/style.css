@@ -37,7 +37,7 @@ body {
 }
 .header__work-info__phone {
   font-size: 18px;
-  color: var(--color-bg--color);
+  color: var(--counter-bg-color);
   line-height: 1.5em;
   font-weight: 600;
 }
@@ -866,7 +866,7 @@ input {
   line-height: 1.5em;
 }
 .register__bottom__login {
-  color: var(--color-bg--color);
+  color: var(--counter-bg-color);
 }
 .login__navigation {
   display: flex;
@@ -880,7 +880,7 @@ input {
 }
 
 .login__toregister {
-  color: var(--color-bg--color);
+  color: var(--counter-bg-color);
 }
 
 .register__overlay {
@@ -894,7 +894,7 @@ input {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 15px;
-  z-index: 10;
+  z-index: 40;
 }
 .register {
   width: 100%;

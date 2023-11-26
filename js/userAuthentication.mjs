@@ -453,6 +453,7 @@ loginSuccessClose.addEventListener("click", () => {
   loginSuccess.style.display = "none";
 });
 registerSuccessClose.addEventListener("click", () => {
+  window.location.reload();
   registerSuccess.style.display = "none";
 });
 logoutButton.addEventListener("click", () => {
