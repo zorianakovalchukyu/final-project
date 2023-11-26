@@ -1,134 +1,517 @@
-
 {
-    "categories":{
-      "Піца":[
-        {
-          "id":1,
-          "image": "icons/products/pizza/karne.webp",
-          "title": "Верона",
-          "ingredients": [
-            "Салямі мілано",
-            "сир Моцарела",
-            "неаполітанський соус",
-            "орегано"
-          ],
-          "price": 262,
-          "weight": 420,
-          "bonus": 8,
-          "category": "meat"
-        },
-        {
-            "id":2,
-            "image": "icons/products/pizza/karne.webp",
-            "title": "Верона",
-            "ingredients": [
-                "Салямі мілано",
-                "сир Моцарела",
-                "неаполітанський соус",
-                "орегано"
-              ],
-            "price": "262",
-            "weight": "420",
-            "bonus": "8",
-            "category": "meat"
-        }
-      ],
-      "Салати":[
-        {
-          "id":3,
-          "image": "icons/products/pizza/karne.webp",
-          "title": "Салат",
-          "ingredients":[
-            "Салямі мілано",
-            "сир Моцарела",
-            "неаполітанський соус",
-            "орегано"
-          ],
-          "price": 262,
-          "weight": 420,
-          "bonus": 8,
-          "category": "meat"
-        },
-        {
-            "id":4,
-            "image": "icons/products/pizza/karne.webp",
-            "title": "Верона",
-            "ingredients": [
-                "Салямі мілано",
-                "сир Моцарела",
-                "неаполітанський соус",
-                "орегано"
-              ],
-            "price": "262",
-            "weight": "420",
-            "bonus": "8",
-            "category": "meat"
-        }
-      ],
-      "Десерти":[
-        {
-          "id":5,
-          "image": "icons/products/pizza/karne.webp",
-          "title": "Верона",
-          "ingredients": [
-            "Салямі мілано",
-            "сир Моцарела",
-            "неаполітанський соус",
-            "орегано"
-          ],
-          "price": 262,
-          "weight": 420,
-          "bonus": 8,
-          "category": "meat"
-        },
-        {
-            "id":6,
-            "image": "icons/products/pizza/karne.webp",
-            "title": "Верона",
-            "ingredients": [
-                "Салямі мілано",
-                "сир Моцарела",
-                "неаполітанський соус",
-                "орегано"
-              ],
-            "price": "262",
-            "weight": "420",
-            "bonus": "8",
-            "category": "meat"
-        }
-      ],
-      "Напої":[
-        {
-          "id":7,
-          "image": "icons/products/pizza/karne.webp",
-          "title": "Верона",
-          "ingredients": [
-            "Салямі мілано",
-            "сир Моцарела",
-            "неаполітанський соус",
-            "орегано"
-          ],
-          "price": 262,
-          "weight": 420,
-          "bonus": 8,
-          "category": "meat"
-        },
-        {
-            "id":8,
-            "image": "icons/products/pizza/karne.webp",
-            "title": "Верона",
-            "ingredients": [
-                "Салямі мілано",
-                "сир Моцарела",
-                "неаполітанський соус",
-                "орегано"
-              ],
-            "price": "262",
-            "weight": "420",
-            "bonus": "8",
-            "category": "meat"
-        }
-      ]
-
-    }
+  "categories": {
+    "Піца": [
+      {
+        "id": 1,
+        "image": "icons/products/pizza/3-syry-z-grusheyu.webp",
+        "title": "3 сири з грушкою",
+        "ingredients": [
+          "Сир моцарела двох видів",
+          "сир Дор блю",
+          "груша",
+          "мед",
+          "грнцький горіх",
+          "вершковий соус"
+        ],
+        "price": 274,
+        "weight": 440,
+        "bonus": 8,
+        "category": ["vegetables"]
+      },
+      {
+        "id": 2,
+        "image": "icons/products/pizza/proshuto.webp",
+        "title": "Прошуто",
+        "ingredients": [
+          "Хамон",
+          "Шинка",
+          "артишоки",
+          "сир моцарела",
+          "гриби печериці",
+          "неополітанський соус"
+        ],
+        "price": 291,
+        "weight": 480,
+        "bonus": 9,
+        "category": "meat"
+      },
+      {
+        "id": 3,
+        "image": "icons/products/pizza/kaprichoza.webp",
+        "title": "Капрічоза",
+        "ingredients": [
+          "Шинка",
+          "печериці",
+          "маслини",
+          "сир моцарела",
+          "неополітанський соус"
+        ],
+        "price": 252,
+        "weight": 460,
+        "bonus": 8,
+        "category": ["meat"]
+      },
+      {
+        "id": 4,
+        "image": "icons/products/pizza/kon-birra.webp",
+        "title": "Кон Бірра",
+        "ingredients": [
+          "сир моцарела",
+          "мисливські ковбаски",
+          "куряче філе",
+          "салямі чорізо",
+          "сир дорблю",
+          "перець чилі",
+          "вершковий соус",
+          "орегано"
+        ],
+        "price": 272,
+        "weight": 420,
+        "bonus": 8,
+        "category": ["meat", "spicy"]
+      },
+      {
+        "id": 5,
+        "image": "icons/products/pizza/tonno.webp",
+        "title": "Тонно",
+        "ingredients": [
+          "Тунець консервований",
+          "цибуля маринова",
+          "сир моцарела",
+          "неаполітанський соус"
+        ],
+        "price": 256,
+        "weight": 430,
+        "bonus": 8,
+        "category": ["vegetables", "seafood"]
+      },
+      {
+        "id": 6,
+        "image": "icons/products/pizza/kvatro-formadzhi.webp",
+        "title": "Кватро Формаджі",
+        "ingredients": [
+          "Сир моцарела",
+          "ніжний крем-сир",
+          "сир пармезан",
+          "сир Дор блю"
+        ],
+        "price": 298,
+        "weight": 420,
+        "bonus": 9,
+        "category": ["vegetables"]
+      },
+      {
+        "id": 7,
+        "image": "icons/products/pizza/karne.webp",
+        "title": "Карне",
+        "ingredients": [
+          "Шинка",
+          "салямі мілано",
+          "куряче філе",
+          "бекон",
+          "сир моцарела",
+          "неаполітанський соус",
+          "орегано"
+        ],
+        "price": 277,
+        "weight": 440,
+        "bonus": 8,
+        "category": ["meat"]
+      },
+      {
+        "id": 8,
+        "image": "icons/products/pizza/karbonara.webp",
+        "title": "Карбонара",
+        "ingredients": [
+          "Бекон",
+          "жовток курячий",
+          "часник",
+          "свіжа рукола",
+          "сир моцарела",
+          "сир пармезан",
+          "вершковий соус."
+        ],
+        "price": 261,
+        "weight": 410,
+        "bonus": 8,
+        "category": ["meat"]
+      },
+      {
+        "id": 9,
+        "image": "icons/products/pizza/mafio-di-czezarini.webp",
+        "title": "Мафіо ді Цезаріні",
+        "ingredients": [
+          "Куряче філе",
+          "бекон",
+          "мікс салатів",
+          "помідори чері",
+          "соус цезар",
+          "сир моцарела",
+          "сир пармезан",
+          "неаполітанський соус"
+        ],
+        "price": 311,
+        "weight": 530,
+        "bonus": 9,
+        "category": ["meat"]
+      },
+      {
+        "id": 10,
+        "image": "icons/products/pizza/ispana.webp",
+        "title": "Іспана",
+        "ingredients": [
+          "Салямі чарізо",
+          "бекон",
+          "ковбаски",
+          "кукурудза",
+          "сир моцарелла",
+          "неаполітанський соус"
+        ],
+        "price": 252,
+        "weight": 440,
+        "bonus": 8,
+        "category": ["meat"]
+      },
+      {
+        "id": 11,
+        "image": "icons/products/pizza/salyami.webp",
+        "title": "Салямі",
+        "ingredients": [
+          "Салямі мілано",
+          "сир моцарела",
+          "неаполітанський соус",
+          "орегано"
+        ],
+        "price": 246,
+        "weight": 420,
+        "bonus": 7,
+        "category": ["meat"]
+      },
+      {
+        "id": 12,
+        "image": "icons/products/pizza/margaryta.webp",
+        "title": "Маргарита",
+        "ingredients": ["Неаполітанський соус", "сир моцарела"],
+        "price": 172,
+        "weight": 380,
+        "bonus": 7,
+        "category": ["vegatables"]
+      },
+      {
+        "id": 13,
+        "image": "icons/products/pizza/mamaitaliano.webp",
+        "title": "Мамма Італіана",
+        "ingredients": [
+          "Сир моцарела",
+          "ніжний крем-сир",
+          "сир Дор блю",
+          "хамон",
+          "свіжа рукола",
+          "сир пармезан",
+          "вершковий соус"
+        ],
+        "price": 303,
+        "weight": 450,
+        "bonus": 9,
+        "category": ["meat"]
+      },
+      {
+        "id": 14,
+        "image": "icons/products/pizza/karne.webp",
+        "title": "Гавайська",
+        "ingredients": [
+          "Печена курка",
+          "ананаси",
+          "кукурудза",
+          "неаполітанський соус",
+          "сир моцарела"
+        ],
+        "price": 241,
+        "weight": 460,
+        "bonus": 7,
+        "category": ["meat"]
+      },
+      {
+        "id": 15,
+        "image": "icons/products/pizza/diavola.webp",
+        "title": "Діавола",
+        "ingredients": [
+          "Салямі чарізо",
+          "салямі мілано",
+          "перець чилі свіжий і сухий",
+          "цибуля маринова",
+          "сир моцарела",
+          "пікантний соус"
+        ],
+        "price": 262,
+        "weight": 460,
+        "bonus": 8,
+        "category": ["meat", "spicy"]
+      },
+      {
+        "id": 16,
+        "image": "icons/products/pizza/bri.webp",
+        "title": "Брі",
+        "ingredients": [
+          "Багато сиру Брі",
+          "сир моцарела",
+          "вишневий соус",
+          "свіжа рукола",
+          "соус вершковий"
+        ],
+        "price": 300,
+        "weight": 470,
+        "bonus": 9,
+        "category": ["vegetables"]
+      },
+      {
+        "id": 17,
+        "image": "icons/products/pizza/kalczone.webp",
+        "title": "Кальцоне",
+        "ingredients": [
+          "Шинка",
+          "ніжний крем-сир",
+          "гриби печериці",
+          "сир моцарела",
+          "неаполітанський соус"
+        ],
+        "price": 223,
+        "weight": 420,
+        "bonus": 7,
+        "category": ["meat"]
+      }
+    ],
+    "Салати": [
+      {
+        "id": 18,
+        "image": "icons/products/pizza/salads/salat-z-hamonom.webp",
+        "title": "Кальцоне",
+        "ingredients": [
+          "Мікс салату",
+          "хамон",
+          "груша",
+          "коктейльні помідори",
+          "грецький горіх",
+          "сир дорблю",
+          "соус медово-гірчичний"
+        ],
+        "price": 199,
+        "weight": 300,
+        "bonus": 6,
+        "category": ["meat"]
+      },
+      {
+        "id": 19,
+        "image": "icons/products/pizza/salads/salat-z-krevetkoyu.webp",
+        "title": "Салат з креветкою",
+        "ingredients": [
+          "Мікс салату",
+          "тигрова креветка",
+          "огірок",
+          "коктейльні помідори",
+          "ніжний крем-сир",
+          "соус медово-гірчичний"
+        ],
+        "price": 225,
+        "weight": 300,
+        "bonus": 7,
+        "category": ["seafood"]
+      },
+      {
+        "id": 20,
+        "image": "icons/products/pizza/salads/salat-alya-kapreze.webp",
+        "title": "Салат аля Капрезе",
+        "ingredients": [
+          "Мікс салату",
+          "сир моцарела",
+          "маслини",
+          "коктейльні помідори",
+          "каперси",
+          "соус аля песто"
+        ],
+        "price": 189,
+        "weight": 300,
+        "bonus": 6,
+        "category": []
+      },
+      {
+        "id": 21,
+        "image": "icons/products/pizza/salads/salat-alya-kapreze.webp",
+        "title": "Салат Цезаріні з куркою",
+        "ingredients": [
+          "Мікс салату",
+          "запечене куряче філе",
+          "смажений бекон",
+          "коктейльні помідори",
+          "яйце перепелине",
+          "сир пармезан",
+          "грисіні",
+          "соус цезар"
+        ],
+        "price": 189,
+        "weight": 300,
+        "bonus": 6,
+        "category": []
+      }
+    ],
+    "Десерти": [
+      {
+        "id": 22,
+        "image": "icons/products/desserts/snikers.jpg",
+        "title": "Снікерс",
+        "ingredients": [
+          "Шоколадний бісквіт",
+          "вершково-сирний крем з додаванням арахісової"
+        ],
+        "price": 117,
+        "weight": 220,
+        "bonus": 4,
+        "category": []
+      },
+      {
+        "id": 23,
+        "image": "icons/products/desserts/nuts.jpg",
+        "title": "Горішки зі згущеним молоком",
+        "ingredients": ["Горішки зі згущеним молоком 7 шт на порцію"],
+        "price": 86,
+        "weight": 150,
+        "bonus": 3,
+        "category": []
+      },
+      {
+        "id": 24,
+        "image": "icons/products/desserts/tiramisu.jpg",
+        "title": "Тирамісу",
+        "ingredients": [
+          "Італійський десерт на основі сиру маскарпоне з печивом савоярді просоченим кавою"
+        ],
+        "price": 106,
+        "weight": 150,
+        "bonus": 3,
+        "category": []
+      }
+    ],
+    "Напої": [
+      {
+        "id": 25,
+        "image": "icons/products/drinks/dr-pepper-klasychnyj-1.webp",
+        "title": "Dr Pepper",
+        "ingredients": ["330 мл"],
+        "price": 47,
+        "weight": 330,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 26,
+        "image": "icons/products/drinks/dr_pepper_vyshnya__1_-removebg-preview-1.webp",
+        "title": "Dr Pepper вишня",
+        "ingredients": ["330 мл"],
+        "price": 47,
+        "weight": 330,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 27,
+        "image": "icons/products/drinks/sido-apelsyn-1-l.webp",
+        "title": "Сік Cido 1л апельсин",
+        "ingredients": ["Сік Cido 1л апельсин"],
+        "price": 85,
+        "weight": 1,
+        "bonus": 3,
+        "category": []
+      },
+      {
+        "id": 28,
+        "image": "icons/products/drinks/sido-yabluko-1-l.webp",
+        "title": "Сік Cido 1л яблуко",
+        "ingredients": [],
+        "price": 80,
+        "weight": 1,
+        "bonus": 2,
+        "category": []
+      },
+      {
+        "id": 29,
+        "image": "icons/products/drinks/sido-persyk-1-l.webp",
+        "title": "Сік Cido 1л персик",
+        "ingredients": ["Сік Cido 1л персик"],
+        "price": 80,
+        "weight": 1,
+        "bonus": 2,
+        "category": []
+      },
+      {
+        "id": 30,
+        "image": "icons/products/drinks/sik-tomatnyj-cido.webp",
+        "title": "Сік Cido 1л томат",
+        "ingredients": ["Сік Cido 1л томат"],
+        "price": 80,
+        "weight": 1,
+        "bonus": 2,
+        "category": []
+      },
+      {
+        "id": 31,
+        "image": "icons/products/drinks/morshynska-sg.webp",
+        "title": "Вода Моршинська слабогазована 0,5",
+        "ingredients": ["Вода Моршинська слабогазована 0,5"],
+        "price": 32,
+        "weight": 0.5,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 32,
+        "image": "icons/products/drinks/morshynska-ng.webp",
+        "title": "Вода Моршинська негазована 0,5",
+        "ingredients": ["Вода Моршинська негазована 0,5"],
+        "price": 32,
+        "weight": 0.5,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 33,
+        "image": "icons/products//drinks/fanta-05.webp",
+        "title": "Напій Fanta 0,5",
+        "ingredients": ["Напій Fanta 0,5"],
+        "price": 42,
+        "weight": 1,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 34,
+        "image": "icons/products/drinks/sprajt-05.webp",
+        "title": "Напій Sprite 0,5",
+        "ingredients": ["Напій Sprite 0,5"],
+        "price": 42,
+        "weight": 1,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 35,
+        "image": "icons/products/drinks/kola-05.jpg",
+        "title": "Coca-Cola 0,5",
+        "ingredients": ["Coca-Cola 0,5"],
+        "price": 42,
+        "weight": 1,
+        "bonus": 1,
+        "category": []
+      },
+      {
+        "id": 36,
+        "image": "icons/products/drinks/cola-zero-1.webp",
+        "title": "Coca-Cola zero 0,5",
+        "ingredients": ["Coca-Cola zero 0,5"],
+        "price": 42,
+        "weight": 1,
+        "bonus": 1,
+        "category": []
+      }
+    ]
+  }
 }

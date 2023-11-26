@@ -1,16 +1,18 @@
-import { RegistrationManager, attemptLogin } from "./login.mjs";
+import { RegistrationManager } from "./userAuthentication.mjs";
 document.addEventListener("DOMContentLoaded", function () {
-  let categoriesData; // Змінна для зберігання завантажених даних
+  let categoriesData;
   const productsContainer = document.querySelector(".products");
-  const basket = document.querySelector(".menu_body");
+  const basket = document.querySelector(".basket__layer");
   const basketOutput = document.querySelector(".basket__products");
   const btnBasketOpen = document.querySelector(".header__link__basket");
   const btnBasketClose = document.querySelector(".basket__close");
+  const basketEmpty = document.querySelector(".basket__empty");
   fetch("/js/product.json")
     .then((response) => response.json())
     .then((data) => {
-      categoriesData = data; // Зберегти дані у змінній для подальшого використання
-      initializeApp(); // Викликати функцію для ініціалізації додатку
+      categoriesData = data;
+      initializeApp();
+      initializeScript();
     })
     .catch((error) => {
       console.error("Помилка при завантаженні JSON:", error);
@@ -80,12 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     categoriesBtns.forEach((btn) => {
       btn.addEventListener("click", function () {
+        categoriesBtns.forEach((otherBtn) => {
+          otherBtn.classList.remove("select");
+        });
+        btn.classList.toggle("select");
         filterProducts(btn.textContent);
       });
     });
     displayProducts("Піца");
   }
-
   function addToCart(productId) {
     const registrationManager = new RegistrationManager();
     const userId = registrationManager.isUserLoggedIn()
@@ -94,26 +99,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const existingCart = findCartItemById(productId);
     let quantity = 0;
+    basketEmpty.style.display = "none";
     if (existingCart) {
       quantity = updateCartItem(existingCart, productId);
     } else {
-      // If the product is not in the cart, add it with a quantity of 1
       quantity = transferQuantity(productId);
       createAndAppendCartItem(productId);
     }
 
     if (userId) {
       registrationManager.saveCartItem({ userId, productId, quantity });
-      console.log(
-        "Saved Cart Data:",
-        registrationManager.getSavedCartData(userId)
-      );
     }
 
     calculateTotalPriceOrder();
     calculateAccruedBonuses();
   }
-
   function findCartItemQuantity(productId) {
     const existingCart = findCartItemById(productId);
     if (existingCart) {
@@ -128,40 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function updateCartItemQuantity(productId, quantity) {
-    updateCartItem(findCartItemById(productId), productId);
-    console.log("Updated Quantity:", quantity);
-  }
-
-  // Other helper functions...
-
-  function updateQuantityByIdInLocalStorage(userId, productId, quantity) {
-    // Step 1: Retrieve the cart data from local storage
-    const cartData = loadCartDataFromLocalStorage();
-
-    // Step 2: Find the product in the cart data based on userId and productId
-    const productInCart = cartData.find(
-      (item) => item.userId === userId && item.id === productId
-    );
-
-    // Step 3: Access the quantity property of the found product
-    if (productInCart) {
-      productInCart.quantity = quantity;
-
-      // Step 4: Save the updated cart data back to local storage
-      saveCartDataToLocalStorage(cartData);
-    }
-  }
-
-  function loadCartDataFromLocalStorage() {
-    const savedCartData = localStorage.getItem("cartData");
-    return savedCartData ? JSON.parse(savedCartData) : [];
-  }
-
-  function saveCartDataToLocalStorage(cartData) {
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-  }
-
   function updateCartItem(cartItem, id) {
     const quantityElement = cartItem.querySelector(".product__amount");
     const productDefaultPrice = cartItem.querySelector(
@@ -174,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
       productDefaultPrice.textContent * currentQuantity;
     return currentQuantity;
   }
-
   function createAndAppendCartItem(id) {
     const cartProductElement = createCartProduct(id);
 
@@ -190,11 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       basketOutput.appendChild(cartProductElement);
     }
+    return cartProductElement;
   }
   function createCartProduct(id) {
     let cartProduct = findProductById(id);
 
-    // Check if the product is found before proceeding
     if (cartProduct) {
       let cartProductDiv = document.createElement("div");
       cartProductDiv.className = "basket__product";
@@ -228,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
       return cartProductDiv;
     } else {
-      console.error(`Product with id ${id} not found.`);
       return null;
     }
   }
@@ -240,11 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const productButton of productButtons) {
       const productId = productButton.getAttribute("data-product-id");
 
-      // Use strict equality for comparison
-      console.log(+productId === +id);
-
       if (+productId === +id) {
-        // Use strict equality to retrieve the correct product price
         return productButton
           .closest(".product")
           .querySelector(".product__price").textContent;
@@ -258,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const deleteButton = cartItem.querySelector(".product__delete");
       const productId = +deleteButton.getAttribute("data-product-id");
 
-      // Use strict equality for comparison
       if (productId === +id) {
         return cartItem;
       }
@@ -274,9 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let productBtn of productBtns) {
       const productId = productBtn.getAttribute("data-product-id");
 
-      // Use strict equality for comparison
       if (+productId === id) {
-        // Adjust the query to get the quantity of the specific product
         const quantityElement = productBtn
           .closest(".product")
           .querySelector(".product__amount");
@@ -284,9 +241,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    return null; // Return an appropriate value if the product is not found
+    return null;
   }
-
   productsContainer.addEventListener("click", function (event) {
     const target = event.target;
 
@@ -297,33 +253,33 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (target.classList.contains("product__btn__order")) {
       const productId = target.getAttribute("data-product-id");
       addToCart(+productId);
+      updateProductCounter();
     }
   });
   btnBasketOpen.addEventListener("click", function () {
     basket.style.display = "block";
   });
-
-  // Event listener for closing the basket
   btnBasketClose.addEventListener("click", function () {
     basket.style.display = "none";
   });
   basketOutput.addEventListener("click", function (event) {
     const target = event.target;
 
-    // Check if the clicked element is a "product__delete" button
     if (target.classList.contains("product__delete")) {
       const productId = target.getAttribute("data-product-id");
       deleteProductFromCart(productId);
+      updateProductCounter();
     } else if (target.classList.contains("product__amount__increment")) {
       handleBasketQuantityChange(target, 1);
+      updateProductCounter();
     } else if (target.classList.contains("product__amount__decrement")) {
       handleBasketQuantityChange(target, -1);
+      updateProductCounter();
     }
 
     calculateTotalPriceOrder();
     calculateAccruedBonuses();
   });
-
   function handleQuantityChange(target, change) {
     const product = target.closest(".product");
     const countInput = product.querySelector(".product__amount");
@@ -360,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
         (item) => +item.productId === +productId
       );
       if (productIndex !== -1) {
-        // Update the quantity based on the change (increment or decrement)
         cartData[productIndex].quantity = amount;
         localStorage.setItem(`cartData_${userId}`, JSON.stringify(cartData));
       }
@@ -370,7 +325,6 @@ document.addEventListener("DOMContentLoaded", function () {
       productTotalPrice.textContent = newPrice;
     }
   }
-
   function calculateTotalPriceOrder() {
     const products = document.querySelectorAll(".basket__product");
     let totalPriceOutput = document.querySelector(".basket__sum__amount");
@@ -384,7 +338,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     totalPriceOutput.textContent = totalPrice;
   }
+  function updateProductCounter() {
+    const products = document.querySelectorAll(".basket__product");
+    let productsCounter = document.querySelector(".header__product__counter");
 
+    const totalQuantity = Array.from(products).reduce((total, product) => {
+      const productQuantity =
+        +product.querySelector(".product__amount").textContent;
+      return total + productQuantity;
+    }, 0);
+
+    productsCounter.textContent = totalQuantity;
+  }
   function calculateAccruedBonuses() {
     const products = document.querySelectorAll(".basket__product");
     const accreudBonusesOutput = document.querySelector(
@@ -421,14 +386,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const userId = registrationManager.getCurrentUserId();
     const cartData = registrationManager.getSavedCartData(userId) || [];
     const productIndex = cartData.findIndex((item) => +item.productId === +id);
-    console.log(cartData);
-    console.log(cartData.findIndex((item) => item.productId === id));
 
     if (productIndex !== -1) {
-      // Remove the product from the cart data
       cartData.splice(productIndex, 1);
 
-      // Save the updated cart data back to local storage
       localStorage.setItem(`cartData_${userId}`, JSON.stringify(cartData));
     }
   }
@@ -450,7 +411,37 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    console.error(`Product with id ${productId} not found.`);
     return null;
+  }
+  function initializeScript() {
+    const registrationManager = new RegistrationManager();
+    const userId = registrationManager.getCurrentUserId();
+
+    if (userId) {
+      const cartData = registrationManager.getSavedCartData(userId);
+
+      populateBasket(cartData);
+      updateProductCounter();
+    } else {
+      basketEmpty.style.display = "flex";
+    }
+  }
+
+  function populateBasket(cartData) {
+    const basketOutput = document.querySelector(".basket__products");
+
+    basketOutput.innerHTML = "";
+
+    cartData.forEach((item) => {
+      const createdCartItem = createAndAppendCartItem(item.productId);
+      createdCartItem.querySelector(".product__amount").textContent =
+        item.quantity;
+      createdCartItem.querySelector(
+        ".product__total__price__value"
+      ).textContent =
+        item.quantity *
+        createdCartItem.querySelector(".product__default__price__value")
+          .textContent;
+    });
   }
 });
